@@ -1,0 +1,32 @@
+﻿@model Game
+@{
+    ViewData["Title"] = "Game Details";
+}
+
+<h4>@Model.Name </h4>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        
+        
+    }
+
+    
+</style>
+<table >
+    <tr>
+        <th>Details</th>
+        <th>Cover</th>
+    </tr>
+    <tr>
+        <td >@Model.Description</td>
+        <td><img src="@($"{FileSettings.ImagePath}/{@Model.Cover}")" alt="@Model.Name" /></td>
+    </tr>
+</table>

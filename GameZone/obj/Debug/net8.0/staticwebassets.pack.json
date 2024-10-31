@@ -5,12 +5,40 @@
       "PackagePath": "staticwebassets\\GameZone.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\212ec843-8b8b-486b-b4f0-56798fa6b360.png",
-      "PackagePath": "staticwebassets\\assets\\images\\games\\212ec843-8b8b-486b-b4f0-56798fa6b360.png"
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\BasketballFrenzy.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\BasketballFrenzy.png"
     },
     {
-      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\63879702-2605-426f-9683-937e7cea2476.png",
-      "PackagePath": "staticwebassets\\assets\\images\\games\\63879702-2605-426f-9683-937e7cea2476.png"
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\CityBuilder.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\CityBuilder.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\DystopiaSurvival.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\DystopiaSurvival.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\GalacticConquest.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\GalacticConquest.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\GalacticExplorer.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\GalacticExplorer.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\HeroesofValor.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\HeroesofValor.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\MysteryPuzzles.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\MysteryPuzzles.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\NightmareMansion.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\NightmareMansion.png"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\RealmofLegends.png",
+      "PackagePath": "staticwebassets\\assets\\images\\games\\RealmofLegends.png"
     },
     {
       "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\css\\bootstrap.min.css",
@@ -23,6 +51,10 @@
     {
       "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\js\\Game-Form.js",
+      "PackagePath": "staticwebassets\\js\\Game-Form.js"
     },
     {
       "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\js\\site.js",
@@ -275,6 +307,22 @@
     {
       "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\lib\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\lib\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\lib\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\lib\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\lib\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2.min.js"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.GameZone.Microsoft.AspNetCore.StaticWebAssets.props",

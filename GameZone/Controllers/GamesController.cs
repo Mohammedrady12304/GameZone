@@ -27,7 +27,8 @@ namespace GameZone.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var games = _gamesService.GetAll().ToList();
+            return View(games);
         }
 
         //هنا هنحتاج اكشن نوعه get
@@ -77,6 +78,23 @@ namespace GameZone.Controllers
 
         }
 
+        public async Task<IActionResult> Details(int id)
+        {
+            Game game = await _gamesService.GetById(id);
+            return View("Details",game);
+        }
+
+       // [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            bool isDeleted = _gamesService.Delete(id);
+            return isDeleted ? Ok() : BadRequest() ;
+        }
+
+        public async Task<IActionResult> Update(int id)
+        {
+            return View();
+        }
 
         //[HttpPost]
         //[ValidateAntiForgeryToken]

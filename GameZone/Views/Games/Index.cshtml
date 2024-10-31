@@ -1,11 +1,108 @@
-﻿@{
+﻿@model IEnumerable<Game>
+@{
     ViewData["Title"] = "game";
 }
 
-<a class="btn btn-secondary" asp-action="Create" >
-    <i class="bi bi-plus-circle-dotted"></i>
+<a class="btn btn-secondary mb-5 mt-5" asp-action="Create" >
+    <i class="bi bi-plus-circle-dotted "></i>
     Add Game</a>
 
 
 
-<p>hello from index game</p>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid rgb( 50, 251, 226);
+        text-align: center;
+    }
+</style>
+
+<table>
+
+@foreach(var game in Model)
+{
+<tr>
+    <td>
+
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+                <div style="display:flex; align-items:center;">
+
+                <img src="@($"{FileSettings.ImagePath}/{game.Cover}")" style="height:200px;margin:10px;width:100px; border-radius:6px"  />
+                <div class="m-2">
+                    <div style="color:dodgerblue">@game.Name</div>
+                        <div style="color:wheat">@game.Category.Name</div>
+                 </div>
+                </div>
+                    <div class="p-5">
+                        <a href="javescript:;" class="text-decoration-none deleteClass" data-id="@game.Id" >
+                        <i  class="bi bi-trash-fill p-2" style="font-size: 30px;"></i>
+
+                        </a>
+
+                        <a href="javescript:;"   class="text-decoration-none editClass" data-id="@game.Id" >
+
+                        <i class="bi bi-pencil-square p-2" style="font-size: 30px;"></i>
+   
+                        </a>
+                </div>
+    </div>
+    </td>
+    
+</tr>    
+}
+</table>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.deleteClass').on('click', function () {
+                var btn = $(this);
+
+                const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: "btn btn-danger mx-2",
+                        cancelButton: "btn btn-light"
+                    },
+                    buttonsStyling: false
+                });
+                swalWithBootstrapButtons.fire({
+                    title: "Are you sure that you need to delete this game?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: `/Games/Delete/${btn.data('id')}`,
+                            method: 'DELETE',
+                            success: function () {
+                                swalWithBootstrapButtons.fire({
+                                    title: "Deleted!",
+                                    text: "Your file has been deleted.",
+                                    icon: "success"
+                                });
+                                btn.parents('tr').fadeOut();//دي كده هتساعدني اميح ال tr كله من غير refresh
+                            },
+                            error: function () {
+                                swalWithBootstrapButtons.fire({
+                                    title: "!oooops...",
+                                    text: "something went wrong",
+                                    icon: "error"
+                                });
+                            }
+                        });
+                        
+                    } 
+                });
+                
+            });
+        });
+    </script>
+}

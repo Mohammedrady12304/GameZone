@@ -15,14 +15,14 @@
         <div class="col-md-6">
             <div>
                 <label asp-for="Name" class="form-label mt-4"></label>
-                <input asp-for="Name" type="text" class="form-control" placeholder="Enter game name">
+                <input asp-for="Name" type="text" class="form-control" placeholder="Enter the game name">
                 <span asp-validation-for="Name" class="text-danger"></span>
                 
             </div>
             <div>
                 <label asp-for="CategoryId" class="form-label mt-4"></label>
                 <select asp-for="CategoryId" class="form-select" asp-items="Model.Categories" >
-                    <option disabled="">select a category</option>
+                    <option value="">select a category</option>
                     
                 </select>
                 <span asp-validation-for="CategoryId" class="text-danger"></span>
@@ -45,8 +45,13 @@
             </div> 
             <div>
                 <label asp-for="Cover" class="form-label mt-4"></label>
-                <input type="file" class="form-control" asp-for="Cover">
-                <small  class="form-text text-muted">only : jpg , png , jpeg are alloewd with maxLength : 1MB</small>
+                <input type="file" class="form-control" asp-for="Cover"
+                data-rule-extension="@FileSettings.AllowedExtensions.Replace(".",string.Empty)"
+                data-msg-extension="Not Allowed Extension"
+                       
+                data-rule-fileSize="@FileSettings.MaxSizeInByts"
+                       data-msg-fileSize="the max size is @FileSettings.MaxSizeInMB MB">
+                <small  class="form-text text-muted">only : @FileSettings.AllowedExtensions are alloewd with maxLength : @(FileSettings.MaxSizeInMB)MB</small>
 
                 <span asp-validation-for="Cover" class="text-danger d-blocked"></span>
 
@@ -57,11 +62,34 @@
 
         </div>
 
-        <div class="col-md-6">
-
+        <div class="col-md-6 d-flex justify-content-center">
+            <img alt="cover" class="cover-preview d-none"/>
         </div>
 
     </div>
 
 </form>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+    @* دلوقتي انا هعمل client side validation for the size عشان هي مش موجود في ال methods في ملف ال jquery فانا هكتب 
+دلوقتي كود jquery
+    *@
+    @*هنا للاسف معرفتش اضيف كود ال validator في ملف js وضرب معايا errors مش عارف ليه هشوف بعدين *@
+    <script asp-append-version="true">
+
+        $.Validator.addMethod('fileSize', function (value, element, param) {
+            return this.optional(element) || element.files[0].size <= param;
+        });
+
+      
+    </script>
+      @* //هنا هديها برضو كود jquery عشان الصورة تظهر في ال column التاني
+        //بس مااعرفش ليه استخدم id #cover بصراحه *@
+        @*هنا اللقطة بتاعت asp-append-version  هي عشان الموقع دايما يحس بالتغبرات في الملف ده ولازم تعملها خلي بالك *@
+    <script src="~/js/game-form.js" asp-append-version="true"></script>
+}
+
+
 
