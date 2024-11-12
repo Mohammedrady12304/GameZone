@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3FTaL4Rwlg5VdHm8+w1UwNqwqjG31DTYoNLh1BrszHk=",
+  "Hash": "QT4mnaEaQRI/gJWM7lmcV4g2xegH2HFduaXcJM5XYdc=",
   "Source": "GameZone",
   "BasePath": "_content/GameZone",
   "Mode": "Default",
@@ -110,25 +110,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\games\\DystopiaSurvival.png"
-    },
-    {
-      "Identity": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\GalacticConquest.png",
-      "SourceId": "GameZone",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\",
-      "BasePath": "_content/GameZone",
-      "RelativePath": "assets/images/games/GalacticConquest.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\assets\\images\\games\\GalacticConquest.png"
     },
     {
       "Identity": "C:\\Users\\Dc\\source\\repos\\GameZone\\GameZone\\wwwroot\\assets\\images\\games\\GalacticExplorer.png",

@@ -102,5 +102,49 @@ namespace GameZone.Controllers
         //{
         //    return View();
         //}
+
+        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var game = await _gamesService.GetById(id);
+
+            if (game == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new EditGameFormViewModel
+            {
+                Id = game.Id,
+                Name = game.Name,
+                CategoryId = game.CategoryId,
+                Categories = _gamesService.GetCategories(),
+                SelectedDevices = game.Device.Select(d => d.DeviceId).ToList(),
+                Devices = _gamesService.GetDevices(),
+                Description = game.Description
+
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditGameFormViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model.Categories = _gamesService.GetCategories();
+                model.Devices = _gamesService.GetDevices();
+                return View(model);
+            }
+
+            await _gamesService.UpdateGame(model);
+
+            return RedirectToAction("Index");
+        }
+
+
+
+
     }
 }
